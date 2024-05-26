@@ -2,30 +2,12 @@ package Dominio;
 
 import java.time.LocalDate;
 
-public class Curso {
-	private String descricao;
-	private String tituto;
+public class Curso extends Conteudo{
 	private int cargaHoraria;
 
 	public Curso() {
-
 	}
 
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public String getTituto() {
-		return tituto;
-	}
-
-	public void setTituto(String tituto) {
-		this.tituto = tituto;
-	}
 
 	public int getCargaHoraria() {
 		return cargaHoraria;
@@ -35,9 +17,14 @@ public class Curso {
 		this.cargaHoraria = cargaHoraria;
 	}
 
+
 	@Override
+	public double calcularXp() {
+		return XP_PADRAO * this.cargaHoraria;
+	}
+
 	public String toString() {
-		return String.format("[Título = %s, Descricao = %s, Carga Horária =%sh]", tituto, descricao, cargaHoraria);
+		return "Curso{ Titulo: " +getTitulo() + ", Descricao: " + getDescricao()+ ", Data: " + this.cargaHoraria;
 	}
 
 }
